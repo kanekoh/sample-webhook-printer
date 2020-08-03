@@ -3,7 +3,8 @@ FROM registry.access.redhat.com/ubi8/python-36:latest
 WORKDIR /app
 COPY . /app
 
-RUN pip3 --no-cache-dir install -r requirements.txt
+RUN pip3 install --upgrade pip && \
+    pip3 --no-cache-dir install -r requirements.txt
 
 EXPOSE 8090
 
