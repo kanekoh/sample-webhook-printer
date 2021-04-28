@@ -45,7 +45,7 @@ def alert_from_grafana(alert):
                 logger.info("%s, %s, %s, %s, %s, %s", state, rulename, title, message, value['metric'], value['value'])
     except Exception as e: 
         print("Oops!", sys.exc_info()[0], "occurred.")
-        logger.error('Failed to upload to ftp: '+ str(e))
+        logger.error('Failed to print log: '+ str(e))
     return
 
 def process_post_request(request, *args, **kwargs):
