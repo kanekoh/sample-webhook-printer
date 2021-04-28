@@ -39,7 +39,7 @@ def alert_from_grafana(alert):
         rulename = alert['ruleName']
         title = alert['title']
         for value in alert['evalMatches']:
-            if "node" in value['tags']:
+            if value['tags'] is not None and "node" in value['tags']:
                 logger.info("%s, %s, %s, %s, %s, %s", state, rulename, title, message, value['tags']['node'], value['value'])
             else:
                 logger.info("%s, %s, %s, %s, %s, %s", state, rulename, title, message, value['metric'], value['value'])
